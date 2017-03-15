@@ -5,7 +5,7 @@ dependencies:
   override:
     - mvn --fail-never dependency:go-offline || true
   pre:
-    - curl -fL https://getcli.jfrog.io | sudo sh
+    - curl -fL https://getcli.jfrog.io | sh
 compile:
   override:
     - mvn clean install
