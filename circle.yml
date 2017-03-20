@@ -10,7 +10,7 @@ compile:
   override:
     - mvn clean install
     - ./jfrog rt config --url $ARTIFACTORY_URL --user $ARTIFACTORY_USER --apikey $ARTIFACTORY_APIKEY
-    - ./jfrog rt u "multi*/*.jar" circleci-generic-local --build-name=circleci-generic-artifactory --build-number=$CIRCLE_BUILD_NUM --flat=false
-    - ./jfrog rt u "multi*/*.war" circleci-generic-local --build-name=circleci-generic-artifactory --build-number=$CIRCLE_BUILD_NUM --flat=false
+    - ./jfrog rt u "multi*/*.jar" circleci-generic-artifactory --build-name=circleci-generic-artifactory --build-number=$CIRCLE_BUILD_NUM --flat=false
+    - ./jfrog rt u "multi*/*.war" circleci-generic-artifactory --build-name=circleci-generic-artifactory --build-number=$CIRCLE_BUILD_NUM --flat=false
     - ./jfrog rt bce circleci-generic-artifactory $CIRCLE_BUILD_NUM
     - ./jfrog rt bp circleci-generic-artifactory $CIRCLE_BUILD_NUM
